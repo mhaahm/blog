@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <h1> Liste des articles </h1>
+      <table class="table table-striped" border='1'>
+        <tr>
+            <th>Id</th>
+            <th>Titre de l'article</th>
+            <th>Contenu de l'article</th>
+            <th>Date de création de l'article</th>
+        </tr>
+
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.id }}</td>
+                <td>{{ article.title }}</td>
+                <td>{{ article.content}}</td>
+                <td>{{ article.createdAt | date('Y-m-d')}}</td>
+            </tr>
+        {% endfor %}
+
+      </table>
+    </div>
+{% endblock %}
